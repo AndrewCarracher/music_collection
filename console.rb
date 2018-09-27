@@ -11,9 +11,9 @@ artist1 = Artist.new({
 artist2 = Artist.new({
   'name' => 'Eminem'
   })
-
-artist1.save()
-artist2.save()
+# 
+# artist1.save()
+# artist2.save()
 
 album1 = Album.new({
   'artist_id' => artist1.id,
@@ -27,16 +27,16 @@ album2 = Album.new({
   'genre'     => "rap"
   })
 
-album1.save()
-album2.save()
-
-artist = Album.all()
-p artist
-album = Artist.all()
-p album
-
-artist1.albums
-album1.artists
+# album1.save()
+# album2.save()
+#
+# artist = Album.all()
+# p artist
+# album = Artist.all()
+# p album
+#
+# artist1.albums
+# album1.artists
 
 binding.pry
 nil

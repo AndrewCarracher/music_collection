@@ -61,10 +61,10 @@ class Artist
       SqlRunner.run(sql, values)
     end
 
-    def find()
+    def self.find_by_id(id)
         sql = "SELECT * FROM artists WHERE id = $1;"
 
-        order_hashes = SqlRunner.run(sql, [@artist_id])
+        order_hashes = SqlRunner.run(sql, id)
 
         order_objects = order_hashes.map do |order_hash|
           Artist.new(order_hash)
@@ -73,10 +73,10 @@ class Artist
         return order_objects
     end
 
-    def self.delete()
+    def delete()
       # customer = find(id)
       sql = "DELETE FROM artists WHERE id = $1;"
-      SqlRunner.run(sql, [$artist_id])
+      SqlRunner.run(sql, [@id])
     end
 
     def albums()
